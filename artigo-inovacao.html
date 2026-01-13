@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIMENTO+ | Inovação</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== ESTILOS GERAIS ========== */
+        :root {
+            --color-primary: #1E8A96;
+            --color-secondary: #FF6F3C;
+            --color-bg: #F4F7F8;
+            --color-dark: #1F2937;
+            --color-text: #4B5563;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.8;
+            margin: 0; padding: 0;
+        }
+
+        /* Header com Correção de Z-Index */
+        header {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 1000; 
+        }
+
+        .brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+        }
+
+        /* Container Principal */
+        .article-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-secondary); 
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            display: block;
+            border-left: 4px solid var(--color-primary);
+            padding-left: 1rem;
+        }
+
+        .article-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        /* Estilo para Citações */
+        .quote-box {
+            background: #FFF3E0;
+            border-left: 5px solid var(--color-secondary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #D35400;
+            font-weight: bold;
+        }
+        .quote-author {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        /* Estilo para o Diagrama DNA (Grid) */
+        .dna-section {
+            background: #F0F4F8;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        .dna-title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+        .dna-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        .dna-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--color-secondary);
+        }
+        .dna-item h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Lista de Passos */
+        .steps-list {
+            list-style: none;
+            padding: 0;
+        }
+        .steps-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 0;
+        }
+        .step-number {
+            display: inline-block;
+            background: var(--color-primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .back-btn-container {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        .back-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--color-primary);
+            font-weight: bold;
+            border: 2px solid var(--color-primary);
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--color-primary); color: white; }
+
+        @media (min-width: 600px) {
+            .dna-grid { grid-template-columns: 1fr 1fr; }
+            .dna-item:last-child { grid-column: 1 / -1; } 
+        }
+        @media (max-width: 600px) {
+            .article-container { margin: 1rem; padding: 1.5rem; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JFYGJDNBEE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JFYGJDNBEE');
+</script>
+
+<style>
+    #cookie-banner {
+        position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+        background: white; padding: 15px 25px; border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; align-items: center;
+        gap: 15px; z-index: 9999; width: 90%; max-width: 500px; border: 1px solid #eee;
+    }
+    .cookie-text { font-family: 'Lato', sans-serif; font-size: 0.85rem; color: #555; }
+    .cookie-btn {
+        background: #1E8A96; color: white; border: none; padding: 8px 20px;
+        border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 0.8rem;
+    }
+    .cookie-btn:hover { background: #156d75; }
+</style>
+
+<div id="cookie-banner">
+    <span class="cookie-text">🍪 Usamos cookies para melhorar o jornal. Tudo bem?</span>
+    <button class="cookie-btn" onclick="acceptCookies()">Aceitar e Fechar</button>
+</div>
+
+<script>
+    function checkCookies() {
+        if (!localStorage.getItem('movimento_cookies_accepted')) {
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }
+    }
+    function acceptCookies() {
+        localStorage.setItem('movimento_cookies_accepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+    window.onload = function() { checkCookies(); };
+</script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="brand">MOVIMENTO<span style="color: #FFD700;">+</span></a>
+    </header>
+
+    <main class="article-container">
+        
+        <h1>O que é Inovação para o Senac?</h1>
+        <span class="lead">Inovação tem a ver com mudanças. Novos comportamentos, novas tecnologias, novos problemas. Tudo muda o tempo todo.</span>
+
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80" alt="Conexão e Futuro" class="article-img">
+
+	<div class="content">
+            <p><i>Por que a Inovação é Importante?</i> Inovação tem a ver com mudanças. Tudo muda o tempo todo. Quando você nasceu, o mundo era de determinada maneira. Hoje você vive em outro mundo. Novos comportamentos, novas tecnologias, novos problemas, novas soluções. Mudanças. Elas sempre vêm. E mudanças têm a ver com Inovação.</p>
+
+        <div class="content">
+            <p>A inovação está diretamente ligada às mudanças que observamos e sentimos em nosso mundo. Tem a ver com os constantes movimentos que a humanidade faz em busca de melhorar algo. <b>A inquietação e as necessidades do ser humano</b> são os motores propulsores da Inovação e das mudanças.</p>
+
+	    <p><b>Por isso é tão importante falar e conhecer sobre Inovação.</b></p>
+
+	    <p>Estamos imersos em mudanças o tempo todo! O mundo, a cidade, o bairro, o Senac, sua vida. Tudo muda.</p>
+
+	    <p><i>A inovação está conectada ao dinamismo da vida.</i></p>
+
+            <div class="quote-box">
+                “Para inovar é preciso estar disposto a errar. Quem não está disposto a falhar, dificilmente conseguirá solucionar ou criar algo novo.”
+                <span class="quote-author">– Martha Gabriel</span>
+            </div>
+
+            <p>Inovações estão sempre acompanhadas dessas características: <strong>ser útil e gerar valor</strong>. Ou seja, resolver um problema ou atender uma necessidade. E, quanto mais a sociedade muda, mais problemas e necessidades surgem, e mais a Inovação se torna necessária para acompanhar esse ritmo desenfreado de mudanças do nosso mundo.</p>
+
+            <p><b>São as perguntas que te ajudarão a perceber o valor das boas ideias e da inovação!</b></p>
+
+            <p>Nesse sentido, cabe destacar: a Inovação é fruto do ser humano criativo, aquela capacidade de conectar percepções e gerar uma ideia de valor.</p>
+
+	    <p>Essa capacidade é resumida naquilo que o professor Clayton Christensen chamou de “o DNA da Inovação” – um conjunto de 5 características compartilhadas pelas pessoas que inovam em qualquer tipo de negócio</p>
+
+            <div class="dna-section">
+                <h3 class="dna-title">🧬 O DNA da Inovação</h3>
+                <div class="dna-grid">
+                    <div class="dna-item">
+                        <h4>🧠 Pensamento Associativo</h4>
+                        <p style="font-size: 0.9rem;">Ocorre quando o cérebro procura sintetizar e tirar sentido de novas informações. Ajuda a descobrir novas direções fazendo ligações entre questões aparentemente sem relação.</p>
+                    </div>
+                    <div class="dna-item">
+                        <h4>🔍 Observar</h4>
+                        <p style="font-size: 0.9rem;">Habilidade de prestar atenção cuidadosamente no mundo ao redor – clientes, produtos, serviços, tecnologias e empresas. Os inovadores são eternos observadores. E essas observações os ajudam a compreender e ter ideias que levam a novos meios de fazer as coisas.</p>
+                    </div>
+                    <div class="dna-item">
+                        <h4>❓ Questionar</h4>
+                        <p style="font-size: 0.9rem;">Os inovadores são grandes questionadores, que mostram paixão pelo ato de perguntar. Suas questões desafiam com frequência o status quo.</p>
+                    </div>
+                    <div class="dna-item">
+                        <h4>🧪 Experimentar</h4>
+                        <p style="font-size: 0.9rem;">Habilidade de estar constantemente testando novas experiências e pilotando ideias. Os experimentadores exploram sem cessar o mundo, intelectual e fisicamente, desafiam convicções, testam hipóteses ao longo do caminho.</p>
+                    </div>
+                    <div class="dna-item">
+                        <h4>🤝 Cultivar o Networking</h4>
+                        <p style="font-size: 0.9rem;">Gastar tempo e energia testando ideias por meio de uma rede diversificada de pessoas que têm backgrounds e perspectivas diferentes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-box" style="border-color: var(--color-primary); color: var(--color-primary);">
+                “A criatividade é pensar coisas novas. A inovação é fazer coisas novas.”
+                <span class="quote-author">– Theodore Levitt</span>
+            </div>
+
+            <h3>A inovação e a criatividade são como os músculos e assim como um músculo elas precisam de treino e constância.</h3>
+            <p>Uma maneira de fazer isso é:</p>
+
+            <ul class="steps-list">
+                <li>
+                    <span class="step-number">1</span>
+                    <strong>Comece simples:</strong> Ideias pontuais, que não precisam de recursos extras e podem ser realizadas no dia a dia.
+                </li>
+                <li>
+                    <span class="step-number">2</span>
+                    <strong>Inovações repetíveis:</strong> Ações ligadas à melhoria contínua dos principais processos do seu trabalho, curso ou vida. Que tal revisitá-los?
+                </li>
+                <li>
+                    <span class="step-number">3</span>
+                    <strong>Inovação customizada:</strong> Aqueles projetos mais ousados que demandam recursos (dinheiro, tempo) e possuem alto grau de impacto.
+                </li>
+            </ul>
+
+            <p>Entenda que inovar diz respeito a ter boas ideias que tragam bons resultados. Geram valor. Não se preocupe com tecnologias de ponta quando ouvir falar sobre Inovação. Preocupe-se em ter ideias que atendam às necessidades dos seus clientes e melhorem as coisas em nosso cotidiano!</p>
+            
+            <p style="text-align: center; font-weight: bold; font-size: 1.2rem; margin-top: 2rem; color: var(--color-secondary);">
+                Inovar é criar todo dia!
+            </p>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">← Voltar para o Jornal</a>
+        </div>
+
+    </main>
+
+</body>
+</html>

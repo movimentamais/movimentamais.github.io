@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIMENTO+ | Ranking Itapira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== ESTILOS GERAIS (Identidade Visual) ========== */
+        :root {
+            --color-primary: #1E8A96;
+            --color-secondary: #FF6F3C;
+            --color-bg: #F4F7F8;
+            --color-dark: #1F2937;
+            --color-white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--color-bg);
+            color: #4B5563;
+            line-height: 1.6;
+            margin: 0; padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-dark);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            display: block;
+            margin-bottom: 3rem;
+            color: #666;
+        }
+
+        /* ESTILO DO RANKING */
+        .ranking-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid #ddd;
+            transition: transform 0.3s;
+        }
+
+        .rank-item:hover { transform: translateX(5px); }
+
+        /* Cores das Medalhas */
+        .rank-item.gold { border-left-color: #FFD700; background: linear-gradient(to right, #FFFDF0, #fff); }
+        .rank-item.silver { border-left-color: #C0C0C0; }
+        .rank-item.bronze { border-left-color: #CD7F32; }
+
+        .rank-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-right: 1.5rem;
+            min-width: 40px;
+            text-align: center;
+            color: #ccc;
+        }
+
+        .gold .rank-number { color: #DAA520; }
+        .silver .rank-number { color: #7F8C8D; }
+        .bronze .rank-number { color: #A0522D; }
+
+        .rank-info h3 {
+            margin: 0 0 5px 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-primary);
+            font-size: 1.1rem;
+        }
+
+        .rank-course {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .rank-team {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .tutor {
+            font-size: 0.8rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .back-btn-container {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .back-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--color-primary);
+            font-weight: bold;
+            border: 2px solid var(--color-primary);
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--color-primary); color: white; }
+
+        @media (max-width: 600px) {
+            .rank-item { flex-direction: column; text-align: center; gap: 10px; }
+            .rank-number { margin: 0; font-size: 1.5rem; }
+        }
+    </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JFYGJDNBEE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JFYGJDNBEE');
+</script>
+
+<style>
+    #cookie-banner {
+        position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+        background: white; padding: 15px 25px; border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; align-items: center;
+        gap: 15px; z-index: 9999; width: 90%; max-width: 500px; border: 1px solid #eee;
+    }
+    .cookie-text { font-family: 'Lato', sans-serif; font-size: 0.85rem; color: #555; }
+    .cookie-btn {
+        background: #1E8A96; color: white; border: none; padding: 8px 20px;
+        border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 0.8rem;
+    }
+    .cookie-btn:hover { background: #156d75; }
+</style>
+
+<div id="cookie-banner">
+    <span class="cookie-text">🍪 Usamos cookies para melhorar o jornal. Tudo bem?</span>
+    <button class="cookie-btn" onclick="acceptCookies()">Aceitar e Fechar</button>
+</div>
+
+<script>
+    function checkCookies() {
+        if (!localStorage.getItem('movimento_cookies_accepted')) {
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }
+    }
+    function acceptCookies() {
+        localStorage.setItem('movimento_cookies_accepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+    window.onload = function() { checkCookies(); };
+</script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="brand">MOVIMENTO<span style="color: #FFD700;">+</span></a>
+    </header>
+
+    <main class="container">
+        <h1>🏆 Top 5 Senac Itapira</h1>
+        <span class="subtitle">Os melhores Planos Empreendedores da nossa unidade</span>
+
+        <div class="ranking-list">
+            
+            <div class="rank-item gold">
+                <div class="rank-number">#1</div>
+                <div class="rank-info">
+                    <span class="rank-course">Tec. Informática</span>
+                    <h3>Projeto Eco Futuro (Gira-Óleo)</h3>
+                    <div class="rank-team">Equipe: Alex, Fabrício, João Gabriel e Rhyllary</div>
+                    <span class="tutor">Tutor: Fabio Borges</span>
+                </div>
+            </div>
+
+            <div class="rank-item silver">
+                <div class="rank-number">#2</div>
+                <div class="rank-info">
+                    <span class="rank-course">Tec. em RH</span>
+                    <h3>Projeto Sabor do Nordeste</h3>
+                    <div class="rank-team">Equipe: Viviane Oliveira Barbosa</div>
+                    <span class="tutor">Tutora: Leticia Maria</span>
+                </div>
+            </div>
+
+            <div class="rank-item bronze">
+                <div class="rank-number">#3</div>
+                <div class="rank-info">
+                    <span class="rank-course">Cabeleireiro</span>
+                    <h3>Projeto Revita Hair</h3>
+                    <div class="rank-team">Equipe: Audre e Valderlene</div>
+                    <span class="tutor">Tutor: Fabio Borges</span>
+                </div>
+            </div>
+
+            <div class="rank-item">
+                <div class="rank-number">#4</div>
+                <div class="rank-info">
+                    <span class="rank-course">Aprendizagem</span>
+                    <h3>Projeto Minha Cidade</h3>
+                    <div class="rank-team">Equipe: Victor, Lívia Ferraz, Pedro Afonso e Fernanda</div>
+                    <span class="tutor">Tutora: Kaká</span>
+                </div>
+            </div>
+
+            <div class="rank-item">
+                <div class="rank-number">#5</div>
+                <div class="rank-info">
+                    <span class="rank-course">Aprendizagem</span>
+                    <h3>Equipe ONG ON</h3>
+                    <div class="rank-team">Equipe: Thiago e Jhonatan</div>
+                    <span class="tutor">Tutora: Kaká</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; font-size: 0.8rem; opacity: 0.7;">
+            Grupo de Empreendedorismo, Sustentabilidade e Inovação
+        </div>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">← Voltar para o Jornal</a>
+        </div>
+    </main>
+
+</body>
+</html>
