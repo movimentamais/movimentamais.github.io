@@ -3,511 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOVIMENTA+ | Janeiro 2026</title>
+    <title>MOVIMENTA+ | Fevereiro 2026</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            /* Paleta de Cores */
-            --color-primary: #1E8A96;
-            --color-secondary: #FF6F3C;
-            --color-accent: #FFD700;
-            --color-bg: #F4F7F8;
-            --color-dark: #1F2937;
-            --color-text: #4B5563;
-            --color-white: #FFFFFF;
-            --color-third: #6B7280;
-            --color-quarter:  #C0392B;
-            
-            /* Efeitos */
-            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+    <link rel="stylesheet" href="style.css">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ========== HEADER ========== */
-        header {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            padding: 1rem 1.5rem; /* Padding ajustado para o logo maior */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(30, 138, 150, 0.25);
-            backdrop-filter: blur(5px);
-        }
-
-        .header-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: row; 
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: nowrap; 
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 15px; /* Espaço entre o ícone e o texto */
-        }
-
-        .logo-icon {
-            height: 80px; /* Logo aumentado conforme pedido */
-            width: auto;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-
-        /* Grupo para empilhar Nome e Subtítulo */
-        .text-group {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            line-height: 1; /* Mantém o subtítulo perto do título */
-        }
-
-        .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: white;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-plus {
-            color: var(--color-accent);
-            font-size: 1.8rem;
-            margin-left: 2px;
-        }
-
-        .logo-subtitle {
-            color: rgba(255, 255, 255, 0.9);
-            font-family: 'Lato', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            margin-top: 2px;
-            /* text-transform: uppercase; -> Remova o comentário se preferir tudo maiúsculo */
-        }
-
-        .header-date {
-            color: white;
-            font-weight: 700;
-            font-size: 0.9rem;
-            white-space: nowrap; 
-            background: rgba(255, 255, 255, 0.15);
-            padding: 8px 16px;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        /* ========== ESTRUTURA PRINCIPAL ========== */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Headline Principal */
-        .headline {
-            background-color: var(--color-white);
-            padding: 3rem 2rem;
-            text-align: center;
-            margin: 2rem auto;
-            border-radius: 16px;
-            box-shadow: var(--shadow-card);
-        }
-
-        .headline h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-        }
-
-        /* Blocos de Conteúdo */
-        .content-block {
-            background-color: var(--color-white);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            box-shadow: var(--shadow-card);
-            border-left: 6px solid var(--color-primary);
-            transition: var(--transition);
-        }
-
-        .content-block:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .block-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .block-subtitle {
-            color: #6B7280;
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 1rem;
-        }
-
-        /* Artigos Específicos */
-        .article-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--color-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .article-tagline {
-            color: var(--color-secondary);
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .article-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            background-color: #e5e7eb;
-        }
-
-        .article-summary {
-            background-color: #F3F4F6;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        /* Botões e Links */
-        .cta-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .btn-primary {
-            background: var(--color-primary);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background: var(--color-secondary);
-            transform: scale(1.05);
-        }
-
-        /* Botão Secundário (Outline) */
-        .btn-secondary {
-            background: transparent;
-            color: var(--color-dark); /* Texto escuro para leitura */
-            border: 2px solid #ddd;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px; /* Espaço entre ícone e texto */
-        }
-
-        /* Agenda */
-        .agenda-item {
-            display: flex;
-            align-items: center;
-            background: #fff;
-            border: 1px solid #eee;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            transition: var(--transition);
-        }
-
-        .agenda-item:hover {
-            border-color: var(--color-secondary);
-            background: #FFFBF5;
-        }
-
-        .agenda-date-box {
-            background: var(--color-secondary);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 0.8rem;
-            margin-right: 1rem;
-            min-width: 80px;
-        }
-
-        .agenda-info h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.05rem;
-            color: var(--color-dark);
-        }
-
-        .agenda-link {
-            margin-left: auto;
-            color: var(--color-primary);
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        /* Highlights */
-        .highlight-card {
-            background: #F9FAFB;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--color-accent);
-        }
-
-        /* Book Section */
-        .book-card {
-            display: flex;
-            gap: 2rem;
-            align-items: start;
-            background: #F9FAFB;
-            padding: 2rem;
-            border-radius: 12px;
-        }
-
-        .book-cover {
-            width: 120px;
-            height: 180px;
-            background: #ddd;
-            border-radius: 8px;
-            object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            flex-shrink: 0;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--color-dark);
-            color: #D1D5DB;
-            padding: 4rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .footer-cta-box {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 1px dashed rgba(255,255,255,0.3);
-        }
-
-        /* Container do Dropdown */
-        .edition-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        /* O Botão (que parece o badge antigo) */
-        .edition-btn {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            font-weight: 700;
-            font-size: 0.9rem;
-            padding: 8px 16px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.2);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Lato', sans-serif;
-            transition: all 0.3s ease;
-        }
-
-        .edition-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        /* A Lista (Escondida inicialmente) */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1001; /* Fica acima de tudo */
-            border-radius: 12px;
-            overflow: hidden;
-            margin-top: 5px;
-        }
-
-        /* Links dentro da lista */
-        .dropdown-content a {
-            color: var(--color-dark);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 0.9rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-            color: var(--color-primary);
-        }
-
-        /* Mostrar ao passar o mouse (Simples e funcional) */
-        .edition-dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* ========== MOBILE QUERIES ========== */
-        @media (max-width: 600px) {
-            header { padding: 0.8rem 1rem; }
-            .header-container { gap: 10px; }
-            
-            /* Ajustes Mobile para Logo + Subtítulo */
-            .logo-icon { height: 45px; } 
-            .logo-text { font-size: 1.2rem; }
-            .logo-plus { font-size: 1.4rem; }
-            .logo-subtitle { font-size: 0.65rem; }
-
-            .header-date { font-size: 0.75rem; padding: 6px 12px; }
-            
-            .content-block { padding: 1.5rem; }
-            .headline h1 { font-size: 1.5rem; }
-            .book-card { flex-direction: column; align-items: center; text-align: center; }
-            .cta-wrapper { justify-content: center; }
-            .agenda-item { flex-direction: column; text-align: center; gap: 10px; }
-            .agenda-link { margin: 0; }
-	    /* Ajuste Mobile para os botões ficarem empilhados ou lado a lado */
-            .cta-wrapper {
-               flex-direction: column; /* Um embaixo do outro no celular */
-               align-items: stretch; /* Botões ocupam largura total */
-               gap: 15px;
-            }
-            .btn-primary, .btn-secondary {
-            text-align: center;
-            justify-content: center;
-            }
-        }
-    </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JFYGJDNBEE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JFYGJDNBEE');
-</script>
-
-<style>
-    #cookie-banner {
-        position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-        background: white; padding: 15px 25px; border-radius: 50px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; align-items: center;
-        gap: 15px; z-index: 9999; width: 90%; max-width: 500px; border: 1px solid #eee;
-    }
-    .cookie-text { font-family: 'Lato', sans-serif; font-size: 0.85rem; color: #555; }
-    .cookie-btn {
-        background: #1E8A96; color: white; border: none; padding: 8px 20px;
-        border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 0.8rem;
-    }
-    .cookie-btn:hover { background: #156d75; }
-</style>
-
-<div id="cookie-banner">
-    <span class="cookie-text">🍪 Usamos cookies para melhorar o jornal. Tudo bem?</span>
-    <button class="cookie-btn" onclick="acceptCookies()">Aceitar e Fechar</button>
-</div>
-
-<script>
-    function checkCookies() {
-        if (!localStorage.getItem('movimenta_cookies_accepted')) {
-            document.getElementById('cookie-banner').style.display = 'flex';
-        }
-    }
-    function acceptCookies() {
-        localStorage.setItem('movimenta_cookies_accepted', 'true');
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-    window.onload = function() { checkCookies(); };
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFYGJDNBEE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JFYGJDNBEE');
+    </script>
 </head>
 <body>
+
+    <div id="cookie-banner">
+        <span class="cookie-text">🍪 Usamos cookies para melhorar o jornal. Tudo bem?</span>
+        <button class="cookie-btn" onclick="acceptCookies()">Aceitar e Fechar</button>
+    </div>
 
     <header>
         <div class="header-container">
             <div class="logo-section">
-                <img src="logo.png" alt="Logo Lâmpada Cérebro" class="logo-icon">
-                
+                <img src="assets/img/logo.png" alt="Logo Lâmpada Cérebro" class="logo-icon">
                 <div class="text-group">
-                    <div class="logo-text">
-                        MOVIMENTA<span class="logo-plus">+</span>
-                    </div>
+                    <div class="logo-text">MOVIMENTA<span class="logo-plus">+</span></div>
                     <div class="logo-subtitle">Inovação e Empreendedorismo</div>
                 </div>
             </div>
-
-            <div class="edition-dropdown">
-                <button class="edition-btn">
-                    <span>📅</span> Janeiro 2026 ▼
-                </button>
+            <div class="edition-dropdown" tabindex="0">
+                <button class="edition-btn"><span>📅</span> Fevereiro 2026 ▼</button>
                 <div class="dropdown-content">
-                    <a href="#"><strong>📍 Janeiro 2026</strong></a>
-                    
-                    </div>
+                    <a href="versoes-passadas/janeiro-2026.html"><strong>📅 Janeiro 2026</strong></a>
+                    <a href="#"><strong>📅 Fevereiro 2026</strong></a>
+                </div>
             </div>
         </div>
     </header>
@@ -516,351 +46,169 @@
 
         <section class="headline">
             <h1>🚀 O que Empreendedores e Inovadores estão criando agora</h1>
-            <p style="margin-top: 1rem; color: #666;">Uma curadoria mensal dos Comitês de Inovação e Empreendedorismo do SENAC Itapira.</p>
+            <p class="subtitle-text">Uma curadoria mensal dos Comitês de Inovação e Empreendedorismo do SENAC Itapira.</p>
         </section>
 
         <section class="content-block" id="empreendedorismo">
-    <div class="block-header">
-        <h2 class="block-title">💡 Empreendedorismo em Foco</h2>
-        <p class="block-subtitle">Mais do que negócios: uma nova forma de ver o mundo</p>
-    </div>
+            <div class="block-header">
+                <h2 class="block-title">💡 Empreendedorismo em Foco</h2>
+                <p class="block-subtitle">Mais do que negócios: uma nova forma de ver o mundo</p>
+            </div>
+            <article>
+                <h3 class="article-title-large">Empreenda Senac 2026 abre inscrições em março e mobiliza alunos do Senac Itapira</h3>
+                
+                <img src="assets/2026-02/imagem-empreenda.png" alt="Jovem liderando apresentação" class="article-img" style="max-height: 250px;">
 
-    <article>
-        <h3 class="article-title" style="font-size: 1.5rem; line-height: 1.3;">
-            Empreender não é abrir uma empresa: é ter coragem para liderar sua vida e impactar o mundo
-        </h3>
-        
-        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=80" 
-             alt="Jovem liderando apresentação" 
-             class="article-image"
-             style="height: 250px;">
+                <div class="article-summary summary-primary">
+                    <p class="mb-1">Estudantes regularmente matriculados em 2026 no Senac Itapira poderão participar, entre março e junho, do <strong>Empreenda Senac 2026</strong>, uma das maiores competições de empreendedorismo do país.</p>
+                    <p>A iniciativa incentiva a criação de ideias de negócio com potencial de transformação social, promovendo a cultura empreendedora e oferecendo premiações que podem chegar a <strong>R$ 47 mil.</strong></p>
+                </div>
 
-        <div class="article-summary" style="background-color: #E0F7FA; border-left: 4px solid var(--color-primary);">
-            <p style="margin-bottom: 1rem;">
-                Empreendedorismo está muito além de virar dono de um negócio. É uma <strong>atitude revolucionária</strong>: pensar em oportunidades onde outros veem obstáculos, questionar o status quo, transformar ideias criativas em ações reais.
-            </p>
-            <p style="margin-bottom: 1rem;">
-                No Senac, você aprende que empreender é ter <strong>iniciativa em sala de aula</strong>, propor soluções para problemas que ninguém resolveu, testar ideias mesmo sabendo que pode falhar — e aprender com isso. É aquela mentalidade de quem não espera tudo pronto, mas se move para fazer acontecer.
-            </p>
-            <p>
-                Prova viva: o <strong>Empreenda Senac</strong>, que em 18 edições mobilizou <strong>73 mil participantes</strong> e transformou <strong>22 mil ideias</strong> em soluções reais. Você está pronto para ser o próximo? Porque empreender não é sobre negócios. É sobre <strong>agir, evoluir e deixar sua marca</strong>.
-            </p>
-        </div>
+                <div class="cta-wrapper">
+                    <a href="materias/2026-02/artigo-empreendedorismo.html" class="btn-primary">📖 Ler Matéria Completa</a>
+                    <a href="https://forms.cloud.microsoft/r/DCz0bZU0RB" target="_blank" class="btn-secondary">🚀 Qual é o seu status no Empreenda? Conta pra gente!</a>
+                </div>
+            </article>
+        </section>
 
-        <div class="cta-wrapper">
-    <a href="artigo-empreendedorismo.html" class="btn-primary">
-        📖 Ler Matéria Completa
-    </a>
+        <section class="content-block theme-inovacao" id="inovacao">
+            <div class="block-header">
+                <h2 class="block-title">🔬 Inovação em Ação</h2>
+                <p class="block-subtitle">O que é inovação para o SENAC?</p>
+            </div>
+            <article>
+                <h3 class="article-title-large">Moda + Inovação: por que esse setor bilionário está invisível nos eventos de tecnologia?</h3>
 
-    <a href="https://forms.cloud.microsoft/r/gW4ktKDMfQ" target="_blank" class="btn-secondary">
-        💡 Qual seu perfil? Responda
-    </a>
-</div>
-        </div>
-    </article>
-</section>
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Conceito de Moda Sustentável e Inovação" class="article-img"> 
 
-<section class="content-block" id="inovacao" style="border-left-color: var(--color-secondary);">
-    <div class="block-header">
-        <h2 class="block-title" style="color: var(--color-secondary);">🔬 Inovação em Ação</h2>
-        <p class="block-subtitle">O que é inovação para o SENAC?</p>
-    </div>
+                <div class="article-summary summary-secondary">
+                    <p class="mb-1">Nos maiores eventos de inovação — como o South Summit Brasil — <strong>a moda</strong>, que movimenta bilhões globalmente, simplesmente não aparece nos painéis principais.</p>
+                    <p class="mb-1">Enquanto energia, tech e agro dominam as discussões, <strong>temas transformadores</strong> como economia circular têxtil, rastreabilidade por blockchain e produção regenerativa ficam à margem.</p>
+                    <p>Isso não é por acaso: <strong>A moda ainda carrega o estigma de "superficial"</strong>, quando na verdade conecta cultura, tecnologia e impacto social como poucos setores. Precisamos invadir esses espaços com startups de upcycling escaláveis, painéis sobre design regenerativo e blockchain na moda como pauta obrigatória. A transição para economias sustentáveis sem moda? Impossível. <strong>Hora de provar que inovação de verdade é plural, criativa e fashion.</strong></p>
+                </div>
 
-    <article>
-        <h3 class="article-title" style="font-size: 1.5rem; line-height: 1.3;">
-            A inovação é o seu superpoder: descubra como transformar ideias em impacto real
-        </h3>
+                <div class="cta-wrapper">
+                    <a href="https://coradesign.co/por-que-a-moda-esta-de-fora-dos-eventos-de-inovacao/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background-color: var(--color-secondary);">Ler Matéria Completa ↗</a>
+                    <a href="https://forms.cloud.microsoft/r/UJj4hq9Khv" target="_blank" class="btn-secondary">⚡ Vista essa ideia: Qual seria a startup da sua equipe?</a>
+                </div>
+            </article>
+        </section>
 
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80" 
-             alt="Conexão global e inovação" 
-             class="article-image"
-             style="height: 250px;"> 
-
-        <div class="article-summary" style="background-color: #FFF3E0; border-left: 4px solid var(--color-secondary);">
-            <p style="margin-bottom: 1rem;">
-                O mundo está em transformação constante e acelerada. Novas tecnologias surgem, comportamentos mudam, problemas emergem — e <strong>quem inova não é quem espera pela perfeição</strong>, mas quem tem coragem de tentar, falhar e evoluir.
-            </p>
-            <p style="margin-bottom: 1rem;">
-                Você possui o <strong>DNA da inovação</strong> dentro de você: a capacidade de conectar percepções, questionar o óbvio e criar soluções que resolvem problemas reais. Começando com pequenas ideias que transformam seu dia a dia, passando por melhorias contínuas nos seus processos, e chegando a projetos ousados que impactam multidões — a inovação é um músculo que cresce com treino.
-            </p>
-            <p>
-                Não se trata de ser um gênio tech ou ter recursos infinitos. Trata-se de estar disposto a errar, aprender e criar algo melhor a cada dia. <strong>Hora de canalizar essa energia em inovação que importa.</strong>
-            </p>
-        </div>
-
-        <div class="cta-wrapper">
-    <a href="artigo-inovacao.html" class="btn-primary" style="background: var(--color-secondary);">
-        🎬 Ler Artigo Completo
-    </a>
-
-    <a href="https://forms.cloud.microsoft/r/tgWy5Rs2EG" target="_blank" class="btn-secondary">
-        🧬 Teste seu DNA Inovador
-    </a>
-</div>
-    </article>
-</section>
-
-        <section class="content-block" id="agenda" style="border-left-color: var(--color-accent);">
-    
-    <style>
-        /* Card que agrupa vários dias */
-        .agenda-group-card {
-            background: #F9FAFB;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-left: 5px solid var(--color-accent);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .group-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--color-dark);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Lista de dias compacta */
-        .schedule-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem; /* Distância entre os dias (mais juntos) */
-        }
-
-        .schedule-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 1px dashed #e5e7eb;
-        }
-        
-        .schedule-row:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .date-badge {
-            background: var(--color-accent);
-            color: var(--color-dark);
-            font-weight: bold;
-            font-size: 0.75rem;
-            padding: 4px 8px;
-            border-radius: 6px;
-            min-width: 50px;
-            text-align: center;
-            flex-shrink: 0; /* Impede que a data encolha */
-        }
-
-        .activity-desc {
-            font-size: 0.9rem;
-            color: #555;
-            line-height: 1.4;
-        }
-
-        /* Estilo Específico para Carnaval (Aviso) */
-        .carnival-card {
-            border-left-color: var(--color-secondary); /* Laranja */
-            background: #FFF8F5;
-        }
-
-        .status-dot {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            margin-right: 6px;
-        }
-        .open { background-color: #27AE60; } /* Verde */
-        .closed { background-color: #C0392B; } /* Vermelho */
-        .partial { background-color: #F39C12; } /* Amarelo */
-
-    </style>
-
-    <div class="block-header">
-        <h2 class="block-title" style="color: var(--color-dark);">📅 Agenda & Avisos </h2>
-        <p class="block-subtitle">Fique por dentro da programação especial do mês de Fevereiro</p>
-    </div>
-
-    <div class="agenda-group-card">
-        <div class="group-title" style="color: var(--color-dark)">
-            🎒 Semana de Volta às Aulas
-        </div>
-        
-        <div class="schedule-list">
-            <div class="schedule-row">
-                <div class="date-badge">SEG<br>09/02</div>
-                <div class="activity-desc">
-                    <strong>Recepção de Boas-vindas</strong><br>
-                    Nos intervalos: DJ, Backdrop para Fotos, Pipoca e Algodão-doce
+        <section class="content-block theme-agenda" id="agenda">
+            <div class="block-header">
+                <h2 class="block-title">📅 Agenda & Avisos </h2>
+                <p class="block-subtitle">Fique por dentro da programação de Março</p>
+            </div>
+            <div class="agenda-group-card">
+                <div class="group-title">📌 Próximos Eventos</div>
+                <div class="schedule-list">
+                    <div class="schedule-row">
+                        <div class="date-badge">TER<br>03/03</div>
+                        <div class="activity-desc">
+                            <strong>Dia E - Empreenda Senac</strong><br>
+                            Abertura oficial das inscrições! Reúna sua equipe e procure seu professor orientador.
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="schedule-row">
-                <div class="date-badge">TER<br>10/02</div>
-                <div class="activity-desc">
-                    <strong>Oficina Artística</strong><br>
-                    Ponto de encontro: Sala 10 | Manhã (09h00 às 11h00)
+            <div class="agenda-group-card" style="border-left-color: #E74C3C; background-color: #FDEDEC;">
+                <div class="group-title" style="color: #C0392B;">🚨 Alerta de Spoiler</div>
+                <div class="schedule-list">
+                    <div class="schedule-row" style="border-bottom: none; padding-bottom: 0;">
+                        <div class="activity-desc" style="color: #922B21; font-size: 1rem;">
+                            Em abril vem aí a <strong>Semana Senac de Leitura</strong>, fique de olho 👀.
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="schedule-row">
-                <div class="date-badge">QUA<br>11/02</div>
-                <div class="activity-desc">
-                    <strong>Oficina Artística</strong><br>
-                    Ponto de encontro: Sala 10 | Tarde (14h00 às 16h00)
+        <section class="content-block theme-aconteceu" id="aconteceu">
+            <div class="block-header">
+                <h2 class="block-title">✨ O Que Rolou</h2>
+                <p class="block-subtitle">Confira os destaques recentes!</p>
+            </div>
+
+            <div class="highlight-card highlight-primary">
+                <h4>🏆 Vencedores Estaduais</h4>
+                <p class="text-muted">Conheça os projetos do Empreenda que venceram a edição de 2025.</p>
+                <a href="https://empreenda.digito1.com.br/Home/Vencedores" target="_blank" class="btn-primary" style="background: none; color: var(--color-primary); padding: 0;">Ver Lista Oficial SP →</a>
+            </div>
+
+            <div class="highlight-card highlight-secondary">
+                <h4>📍 Top 5 Senac Itapira</h4>
+                <p class="text-muted">Veja quem foram os alunos e projetos da nossa unidade que se destacaram no ranking local.</p>
+                <a href="ranking-itapira.html" class="btn-primary" style="background-color: var(--color-secondary);">Ver Ranking Local</a>
+            </div>
+
+             <div class="highlight-card highlight-primary">
+                <h4>🎉 Volta às aulas</h4>
+                <p class="text-muted">A rua dentro de casa! 🔥 Cultura, expressão e muita mão na massa. Confira como foi a oficina de lambe-lambe que movimentou a galera nos três períodos!</p>
+                <a href="https://www.instagram.com/reel/DU6P4aaAYXK/" class="btn-primary" target="_blank">Confira nossas redes!</a>
+            </div>
+                <div class="highlight-card highlight-secondary">
+                <h4>👠💄 Você viu?</h4>
+                <p class="text-muted">Nossas professoras de Moda e Beleza estiveram no Programa Band Mulher mostrando como criar sua maquiagem e fantasia de carnaval! 🎭</p>
+                <a href="https://www.instagram.com/p/DUtcfZ5lRWW" class="btn-primary" target="_blank" style="background-color: var(--color-secondary);">Confira nossas redes!</a>
+            </div>
+        </section>
+
+        <section class="content-block theme-biblioteca" id="biblioteca">
+            <div class="block-header">
+                <h2 class="block-title">📚 Dica da Biblioteca</h2>
+                <p class="block-subtitle">Leitura obrigatória para iniciar o Empreenda com TUDO!</p>
+            </div>
+
+            <div class="book-card">
+                <img src="assets/2026-02/livro-fev.jpg" alt="Capa do Livro Atitude Empreendedora" class="book-cover" style="object-fit: cover;"> 
+                <div class="book-info">
+                    <h3 class="article-title-large">Atitude empreendedora: descubra com Alice seu país das maravilhas</h3>
+                    <p class="text-muted-small mb-1"><strong>Autora:</strong> Mara Sampaio | Editora Senac</p>
+                    
+                    <p class="mb-1">Quem é você? Para onde está indo? Como está construindo sua trajetória profissional?</p>
+                    <p class="mb-1-5"><strong>Por que ler?</strong> Por meio das aventuras de Alice - personagem criada por Lewis Carroll -, a autora Mara Sampaio propõe, num texto lúdico e criativo, formas de desenvolver uma atitude empreendedora, algo essencial para o crescimento de qualquer profissional, seja como funcionário de uma empresa, seja como dono de um negócio próprio.</p>
+                    
+                    <div class="cta-wrapper" style="justify-content: flex-start; gap: 15px;">
+                        <a href="https://www.bibliotecadigitalsenac.com.br/#/livro/99f0c3a5-16d8-ee11-85fa-00224821b803/213d148b-13ff-f011-8332-002248377937" target="_blank" class="btn-primary" style="background-color: var(--color-quarter);">📖 Ver na Biblioteca Digital Senac *</a>
+                        <span class="text-muted-small" style="align-self: center;">* Você precisa estar logado para que o link funcione</span>
+                        <span class="text-muted-small" style="align-self: center;"><strong>Disponível também na biblioteca da unidade</strong></span>
+                    </div>
                 </div>
             </div>
-
-            <div class="schedule-row">
-                <div class="date-badge">QUI<br>12/02</div>
-                <div class="activity-desc">
-                    <strong>Oficina Artística</strong><br>
-                    Ponto de encontro: Biblioteca | Manhã (20h00 às 22h00)
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="agenda-group-card carnival-card">
-        <div class="group-title" style="color: var(--color-dark);">
-            🎭 Funcionamento: Carnaval
-        </div>
-
-        <div class="schedule-list">
-            <div class="schedule-row">
-                <div class="date-badge" style="background: var(--color-secondary);">SEG<br>16/02</div> <div class="activity-desc">
-                    <span class="status-dot closed"></span><strong>Fechado</strong><br>
-                    Recesso de Carnaval.
-                </div>
-            </div>
-
-            <div class="schedule-row">
-                <div class="date-badge" style="background: var(--color-secondary);">TER<br>17/02</div>
-                <div class="activity-desc">
-                    <span class="status-dot closed"></span><strong>Fechado</strong><br>
-                    Recesso de Carnaval.
-                </div>
-            </div>
-
-            <div class="schedule-row">
-                <div class="date-badge" style="background: var(--color-secondary);">QUA<br>18/02</div>
-                <div class="activity-desc">
-                    <span class="status-dot partial"></span><strong>Retorno Parcial</strong><br>
-                    Abertura da unidade às 14h00. Não haverá atividades letivas
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <section class="content-block" id="aconteceu" style="border-left-color: var(--color-third);">
-    <div class="block-header">
-        <h2 class="block-title" style="color: var(--color-third);">✨ O Que Rolou</h2>
-        <p class="block-subtitle">Confira os destaques de 2025!</p>
-    </div>
-
-    <div class="highlight-card" style="border-left: 4px solid var(--color-primary); background: #f9fbfc; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
-        <h4 style="margin-bottom: 0.5rem; font-family: 'Montserrat'; font-size: 1.2rem;">
-            🏆 Vencedores Estaduais
-        </h4>
-        <p style="color: #555; margin-bottom: 1rem;">
-            Conheça os projetos do Empreenda que venceram a edição de 2025.
-        </p>
-        <a href="https://empreenda.digito1.com.br/Home/Vencedores" target="_blank" style="color: var(--color-primary); font-weight: bold; text-decoration: none;">
-            Ver Lista Oficial SP →
-        </a>
-    </div>
-
-    <div class="highlight-card" style="border-left: 4px solid var(--color-secondary); background: #fff5f0; padding: 1.5rem; border-radius: 12px;">
-        <h4 style="margin-bottom: 0.5rem; font-family: 'Montserrat'; font-size: 1.2rem;">
-            📍 Top 5 Senac Itapira
-        </h4>
-        <p style="color: #555; margin-bottom: 1rem;">
-            Veja quem foram os alunos e projetos da nossa unidade que se destacaram no ranking local.
-        </p>
-        <a href="ranking-itapira.html" class="btn-primary" style="background: var(--color-secondary); font-size: 0.9rem; padding: 8px 20px;">
-            Ver Ranking Local
-        </a>
-    </div>
-
-             <div class="highlight-card" style="border-left: 4px solid var(--color-primary); background: #f9fbfc; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
-        <h4 style="margin-bottom: 0.5rem; font-family: 'Montserrat'; font-size: 1.2rem;">
-            🎉 Eventos
-        </h4>
-        <p style="color: #555; margin-bottom: 1rem;">
-            Confira os eventos que agitaram nossa unidade em 2025
-        </p>
-        <a href="https://eventos.sp.senac.br/unidades/senac-itapira/" class="btn-primary" style="background: var(--color-primary); font-weight: bold; text-decoration: none;">
-            Acessar eventos
-        </a>
-    </div>
-</section>
-
-        <section class="content-block" id="biblioteca" style="border-left-color: var(--color-quarter);">
-    <div class="block-header">
-        <h2 class="block-title" style="color: var(--color-quarter);">📚 Dica da Biblioteca</h2>
-        <p class="block-subtitle">Leitura obrigatória para entender a Era das Máquinas</p>
-    </div>
-
-    <div class="book-card">
-        <img src="livro-jan.jpg" 
-             alt="Capa do Livro Habilidades do Futuro" 
-             class="book-cover"
-             style="object-fit: cover;"> 
-        
-        <div class="book-info">
-            <h3 style="margin-bottom: 0.5rem; font-family: 'Montserrat'; line-height: 1.3;">
-                A (r)evolução das habilidades para o futuro do trabalho
-            </h3>
-            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
-                <strong>Autora:</strong> Martha Gabriel | Editora Senac
-            </p>
-            
-            <p style="margin-bottom: 1rem; line-height: 1.6;">
-                O futuro do trabalho não é apenas digital, é <strong>híbrido</strong>. Neste livro essencial, Martha Gabriel desmistifica a ideia de que seremos substituídos e mostra como criar uma parceria poderosa com a Inteligência Artificial.
-            </p>
-            <p style="margin-bottom: 1.5rem; line-height: 1.6;">
-                <strong>Por que ler?</strong> Para descobrir como desenvolver as competências que máquina nenhuma consegue copiar: pensamento crítico, ética, empatia e sustentabilidade. É o manual definitivo para se tornar um humano indispensável na Era da IA.
-            </p>
-            
-            <div class="cta-wrapper" style="justify-content: flex-start; gap: 15px;">
-                <a href="https://www.editorasenacsp.com.br/livro/habilidades-futuro-trabalho-era-inteligencia-artificial" target="_blank" class="btn-primary" style="background: var(--color-quarter); padding: 10px 24px; font-size: 0.9rem;">
-                    📖 Ver na Livraria Senac
-                </a>
-                <span style="font-size: 0.8rem; color: #666; align-self: center;">Disponível também na biblioteca da unidade</span>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
     </main>
 
     <footer>
         <div class="footer-content">
-            <h3 style="color: white; font-family: 'Montserrat'; margin-bottom: 1rem;">MOVIMENTA<span style="color: var(--color-accent);">+</span></h3>
+            <h3 style="color: white; font-family: 'Montserrat', sans-serif; margin-bottom: 1rem;">MOVIMENTA<span style="color: var(--color-accent);">+</span></h3>
             
             <div class="footer-cta-box">
-    <h4 style="color: white; margin-bottom: 1rem;">🗳️ Sua opinião molda a próxima edição</h4>
-    <p style="margin-bottom: 1.5rem; font-size: 0.9rem;">Conta pra gente o que achou desse MOVIMENTO</p>
+                <h4 style="color: white; margin-bottom: 1rem;">🗳️ Sua opinião molda a próxima edição</h4>
+                <p class="mb-1-5">Conta pra gente o que achou desse MOVIMENTO</p>
+                <a href="https://forms.cloud.microsoft/r/wC2dx4SeGS" target="_blank" class="btn-primary" style="background-color: var(--color-accent); color: var(--color-dark);">Responder a Enquete Rápida</a>
+            </div>
 
-    <a href="https://forms.cloud.microsoft/r/wC2dx4SeGS" target="_blank" class="btn-primary" style="background: var(--color-accent); color: var(--color-dark); text-decoration: none; display: inline-block;">
-        Responder a Enquete Rápida
-    </a>
-</div>
-
-            <p style="font-size: 0.8rem; color: #6B7280; margin-top: 3rem;">
+            <p class="text-muted-small" style="margin-top: 3rem;">
                 &copy; 2026 MOVIMENTA+ | Desenvolvido pelos Comitês de Inovação e Empreendedorismo<br>
             </p>
-<p style="font-size: 0.7rem; color: #555; margin-top: 0.5rem;">
-    * Este é um projeto educacional interno. Dados coletados via formulários seguem a LGPD e são utilizados exclusivamente para fins de melhoria editorial.
-</p>
+            <p style="font-size: 0.7rem; color: #555; margin-top: 0.5rem;">
+                * Este é um projeto educacional interno. Dados coletados via formulários seguem a LGPD e são utilizados exclusivamente para fins de melhoria editorial.
+            </p>
         </div>
     </footer>
 
+    <script>
+        function checkCookies() {
+            if (!localStorage.getItem('movimenta_cookies_accepted')) {
+                document.getElementById('cookie-banner').style.display = 'flex';
+            }
+        }
+        function acceptCookies() {
+            localStorage.setItem('movimenta_cookies_accepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+        window.onload = function() { checkCookies(); };
+    </script>
 </body>
 </html>

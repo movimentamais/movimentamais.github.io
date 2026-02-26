@@ -1,0 +1,914 @@
+:root {
+    /* Paleta de Cores */
+    --color-primary: #1E8A96;
+    --color-secondary: #FF6F3C;
+    --color-accent: #FFD700;
+    --color-bg: #F4F7F8;
+    --color-dark: #1F2937;
+    --color-text: #4B5563;
+    --color-white: #FFFFFF;
+    --color-third: #6B7280;
+    --color-quarter:  #C0392B;
+    
+    /* Efeitos */
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ========== HEADER ========== */
+header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    padding: 1rem 1.5rem; /* Padding ajustado para o logo maior */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(30, 138, 150, 0.25);
+    backdrop-filter: blur(5px);
+}
+
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; 
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre o ícone e o texto */
+}
+
+.logo-icon {
+    height: 80px; /* Logo aumentado conforme pedido */
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+/* Grupo para empilhar Nome e Subtítulo */
+.text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1; /* Mantém o subtítulo perto do título */
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: white;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-plus {
+    color: var(--color-accent);
+    font-size: 1.8rem;
+    margin-left: 2px;
+}
+
+.logo-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+    /* text-transform: uppercase; -> Remova o comentário se preferir tudo maiúsculo */
+}
+
+.header-date {
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap; 
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ========== ESTRUTURA PRINCIPAL ========== */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Headline Principal */
+.headline {
+    background-color: var(--color-white);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin: 2rem auto;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+}
+
+.headline h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+/* Blocos de Conteúdo */
+.content-block {
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-card);
+    border-left: 6px solid var(--color-primary);
+    transition: var(--transition);
+}
+
+.content-block:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.block-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.block-subtitle {
+    color: #6B7280;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+/* Artigos Específicos */
+.article-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+.article-tagline {
+    color: var(--color-secondary);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.article-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    background-color: #e5e7eb;
+}
+
+.article-summary {
+    background-color: #F3F4F6;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Botões e Links */
+.cta-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: var(--color-secondary);
+    transform: scale(1.05);
+}
+
+/* Botão Secundário (Outline) */
+.btn-secondary {
+    background: transparent;
+    color: var(--color-dark); /* Texto escuro para leitura */
+    border: 2px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre ícone e texto */
+}
+
+/* Agenda */
+.agenda-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.agenda-item:hover {
+    border-color: var(--color-secondary);
+    background: #FFFBF5;
+}
+
+.agenda-date-box {
+    background: var(--color-secondary);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-right: 1rem;
+    min-width: 80px;
+}
+
+.agenda-info h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    color: var(--color-dark);
+}
+
+.agenda-link {
+    margin-left: auto;
+    color: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Highlights */
+.highlight-card {
+    background: #F9FAFB;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--color-accent);
+}
+
+/* Book Section */
+.book-card {
+    display: flex;
+    gap: 2rem;
+    align-items: start;
+    background: #F9FAFB;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.book-cover {
+    width: 120px;
+    height: 180px;
+    background: #ddd;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+/* Footer */
+footer {
+    background: var(--color-dark);
+    color: #D1D5DB;
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-cta-box {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 1px dashed rgba(255,255,255,0.3);
+}
+
+/* Container do Dropdown */
+.edition-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* O Botão (que parece o badge antigo) */
+.edition-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Lato', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.edition-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ================= MENU DROPDOWN CORRIGIDO ================= */
+
+/* A Lista (Caixa Branca) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 200px; /* Um pouco mais largo para caber o texto */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1001;
+    border-radius: 12px;
+    
+    /* MUDANÇA 1: Removemos o overflow: hidden para a ponte funcionar */
+    overflow: visible; 
+    
+    /* MUDANÇA 2: Usamos margin para afastar, mas a ponte cobre o buraco */
+    margin-top: 10px; 
+    border: 1px solid #eee;
+}
+
+/* A Ponte Invisível (O segredo da estabilidade) */
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    /* Essa área invisível conecta o botão ao menu */
+    top: -15px; 
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent; 
+    display: block;
+}
+
+/* Setinha decorativa no topo (Opcional, mas fica chique) */
+.dropdown-content::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: 20px;
+    width: 12px;
+    height: 12px;
+    background: white;
+    transform: rotate(45deg);
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+
+/* Links dentro da lista */
+.dropdown-content a {
+    color: var(--color-dark);
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background 0.2s;
+}
+
+/* Arredondar os cantos dos links (já que tiramos o overflow do pai) */
+.dropdown-content a:first-child {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none; /* Remove a linha do último */
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f9f9f9;
+    color: var(--color-primary);
+    padding-left: 20px; /* Efeitinho de deslizar */
+}
+
+/* Exibe o menu ao passar o mouse (PC) ou ao clicar/tocar (Celular) */
+.edition-dropdown:hover .dropdown-content,
+.edition-dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+/* ========== MOBILE QUERIES ========== */
+@media (max-width: 600px) {
+    header { padding: 0.8rem 1rem; }
+    .header-container { gap: 10px; }
+    
+    /* Ajustes Mobile para Logo + Subtítulo */
+    .logo-icon { height: 45px; } 
+    .logo-text { font-size: 1.2rem; }
+    .logo-plus { font-size: 1.4rem; }
+    .logo-subtitle { font-size: 0.65rem; }
+
+    .header-date { font-size: 0.75rem; padding: 6px 12px; }
+    
+    .content-block { padding: 1.5rem; }
+    .headline h1 { font-size: 1.5rem; }
+    .book-card { flex-direction: column; align-items: center; text-align: center; }
+    .cta-wrapper { justify-content: center; }
+    .agenda-item { flex-direction: column; text-align: center; gap: 10px; }
+    .agenda-link { margin: 0; }
+/* Ajuste Mobile para os botões ficarem empilhados ou lado a lado */
+    .cta-wrapper {
+        flex-direction: column; /* Um embaixo do outro no celular */
+        align-items: stretch; /* Botões ocupam largura total */
+        gap: 15px;
+    }
+    .btn-primary, .btn-secondary {
+    text-align: center;
+    justify-content: center;
+    }
+    /* 1. Diminuir o botão para caber no cabeçalho apertado */
+    .edition-btn {
+        font-size: 0.75rem; /* Letra menor */
+        padding: 6px 10px;  /* Menos "gordura" nas bordas */
+    }
+
+    /* 2. Ajustar a lista para não estourar a tela */
+    .dropdown-content {
+        min-width: 160px; /* Um pouco mais estreito que no PC */
+        right: -10px;     /* Um leve ajuste para não colar na borda da tela */
+    }
+
+    /* 3. Aumentar a área de toque dos links (dedos são gordinhos) */
+    .dropdown-content a {
+        padding: 15px;    /* Mais fácil de acertar o dedo */
+        font-size: 0.85rem;
+    }
+}
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS DAS PÁGINAS DE MATÉRIA (Vindo do antigo style2.css)
+   ========================================================================== */
+
+/* Container de Leitura (O "papel" branco onde fica o texto) */
+.article-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Título da Matéria - Refinado para títulos longos */
+.article-container h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-primary);
+    font-size: 2rem;         /* Levemente menor (era 2.2rem) para acomodar melhor */
+    line-height: 1.3;        /* Mais espaço entre uma linha e outra para não "esmagar" o texto */
+    margin-bottom: 1.5rem;   /* Mais espaço entre o título e o Lead */
+    letter-spacing: -0.5px;  /* Junta um pouquinho as letras para ficar mais elegante */
+    text-wrap: balance;      /* A MÁGICA: Força as linhas a terem larguras parecidas */
+}
+
+/* O "Lide" (Texto de introdução com barra lateral) */
+.lead {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    display: block;
+    border-left: 4px solid var(--color-secondary);
+    padding-left: 1rem;
+}
+
+/* Imagens dentro da matéria */
+.article-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+}
+
+.img-caption {
+    font-size: 0.8rem;
+    color: #888;
+    text-align: right;
+    display: block;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* Conteúdo do Texto (Parágrafos e Subtítulos) */
+.content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    color: var(--color-dark);
+}
+
+.content h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-secondary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Lista Personalizada (Com checkmarks) */
+.custom-list {
+    background: #F9FAFB;
+    padding: 2rem;
+    border-radius: 12px;
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.custom-list li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.custom-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+}
+
+/* Botão Voltar (No final da matéria) */
+.back-btn-container {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: bold;
+    border: 2px solid var(--color-primary);
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Ajuste Mobile para Matérias */
+@media (max-width: 600px) {
+    .article-container { margin: 1rem; padding: 1.5rem; }
+    .article-container h1 { font-size: 1.8rem; }
+    .article-img { height: 250px; }
+}
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS DO RANKING (Vindo do antigo style2.css)
+   ========================================================================== */
+
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px; /* Limitando a largura para ficar bonito */
+    margin: 0 auto;   /* Centralizando */
+}
+
+.rank-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 6px solid #ddd;
+    transition: transform 0.3s;
+}
+
+.rank-item:hover {
+    transform: translateX(5px);
+}
+
+/* Cores das Medalhas */
+.rank-item.gold {
+    border-left-color: #FFD700;
+    background: linear-gradient(to right, #FFFDF0, #fff);
+}
+
+.rank-item.silver {
+    border-left-color: #C0C0C0;
+}
+
+.rank-item.bronze {
+    border-left-color: #CD7F32;
+}
+
+/* O Número (1º, 2º, 3º) */
+.rank-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-right: 1.5rem;
+    min-width: 40px;
+    text-align: center;
+    color: #ccc;
+}
+
+.gold .rank-number { color: #DAA520; }
+.silver .rank-number { color: #7F8C8D; }
+.bronze .rank-number { color: #A0522D; }
+
+/* Informações do Time */
+.rank-info h3 {
+    margin: 0 0 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+}
+
+.rank-course {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.rank-team {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.tutor {
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Ajuste Mobile para o Ranking */
+@media (max-width: 600px) {
+    .rank-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .rank-number {
+        margin: 0;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Cabeçalho do Ranking (Título e Subtítulo) */
+.ranking-title {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-dark);
+    font-size: 2.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.ranking-subtitle {
+    text-align: center;
+    display: block; /* Importante para o span aceitar margem e centralizar */
+    margin-bottom: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS DA INOVAÇÃO (Vindo do antigo style2.css)
+   ========================================================================== */
+
+/* Estilo para Citações (Quotes) */
+.quote-box {
+    background: #FFF3E0;
+    border-left: 5px solid var(--color-secondary);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #D35400; /* Um tom mais escuro de laranja para leitura */
+    font-weight: bold;
+    border-radius: 0 12px 12px 0;
+}
+
+.quote-author {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #333;
+    font-style: normal;
+}
+
+/* Estilo para o Diagrama DNA (Grid de Cards) */
+.dna-section {
+    background: #F0F4F8;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.dna-title {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.dna-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.dna-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-top: 3px solid var(--color-secondary);
+}
+
+.dna-item h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+/* Responsividade do Grid DNA (Para ficar lado a lado no PC) */
+@media (min-width: 600px) {
+    .dna-grid { grid-template-columns: 1fr 1fr; }
+    .dna-item:last-child { grid-column: 1 / -1; } /* O último item ocupa a linha toda */
+}
+
+/* Lista de Passos Numerados (Bolinhas) */
+.steps-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.steps-list li {
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+    display: flex; /* Alinha bolinha e texto */
+    align-items: start;
+}
+
+.step-number {
+    display: inline-block;
+    background: var(--color-primary);
+    color: white;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-weight: bold;
+    flex-shrink: 0; /* Impede a bolinha de amassar */
+}
+/* =========================================
+   ESTILOS ADICIONAIS (FEV/2026)
+   ========================================= */
+
+/* --- Banner de Cookies --- */
+#cookie-banner {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: white; padding: 15px 25px; border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; align-items: center;
+    gap: 15px; z-index: 9999; width: 90%; max-width: 500px; border: 1px solid #eee;
+}
+.cookie-text { font-family: 'Lato', sans-serif; font-size: 0.85rem; color: #555; }
+.cookie-btn {
+    background: var(--color-primary); color: white; border: none; padding: 8px 20px;
+    border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 0.8rem;
+}
+.cookie-btn:hover { background: #156d75; }
+
+/* --- Ajustes de Tipografia e Espaçamentos --- */
+.subtitle-text { margin-top: 1rem; color: #666; }
+.article-title-large { font-size: 1.5rem; line-height: 1.3; margin-bottom: 1rem; }
+.text-muted { color: #555; margin-bottom: 1rem; }
+.text-muted-small { font-size: 0.8rem; color: #666; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-1-5 { margin-bottom: 1.5rem; }
+
+/* --- Cores Temáticas das Seções --- */
+.theme-inovacao { border-left-color: var(--color-secondary) !important; }
+.theme-inovacao .block-title { color: var(--color-secondary) !important; }
+
+.theme-agenda { border-left-color: var(--color-accent) !important; }
+.theme-agenda .block-title { color: var(--color-dark) !important; }
+
+.theme-aconteceu { border-left-color: var(--color-third) !important; }
+.theme-aconteceu .block-title { color: var(--color-third) !important; }
+
+.theme-biblioteca { border-left-color: var(--color-quarter) !important; }
+.theme-biblioteca .block-title { color: var(--color-quarter) !important; }
+
+/* --- Caixas de Resumo (Leads) --- */
+.summary-primary { background-color: #E0F7FA; border-left: 4px solid var(--color-primary); }
+.summary-secondary { background-color: #FFF3E0; border-left: 4px solid var(--color-secondary); }
+
+/* --- Cartões de Destaque (O que rolou) --- */
+.highlight-card h4 { margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; font-size: 1.2rem; }
+.highlight-primary { border-left: 4px solid var(--color-primary); background: #f9fbfc; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; }
+.highlight-secondary { border-left: 4px solid var(--color-secondary); background: #fff5f0; padding: 1.5rem; border-radius: 12px; }
+
+/* --- Módulo de Agenda --- */
+.agenda-group-card {
+    background: #F9FAFB; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;
+    border-left: 5px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.group-title {
+    font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 800;
+    color: var(--color-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;
+}
+.schedule-list { display: flex; flex-direction: column; gap: 0.8rem; }
+.schedule-row { display: flex; align-items: flex-start; gap: 1rem; padding-bottom: 0.8rem; border-bottom: 1px dashed #e5e7eb; }
+.schedule-row:last-child { border-bottom: none; padding-bottom: 0; }
+.date-badge {
+    background: var(--color-accent); color: var(--color-dark); font-weight: bold;
+    font-size: 0.75rem; padding: 4px 8px; border-radius: 6px; min-width: 50px; text-align: center; flex-shrink: 0;
+}
+.activity-desc { font-size: 0.9rem; color: #555; line-height: 1.4; }
+.carnival-card { border-left-color: var(--color-secondary); background: #FFF8F5; }
+.status-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+.dot-open { background-color: #27AE60; }
+.dot-closed { background-color: #C0392B; }
+.dot-partial { background-color: #F39C12; }

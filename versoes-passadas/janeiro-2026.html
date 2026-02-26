@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIMENTA+ | Janeiro 2026</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JFYGJDNBEE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JFYGJDNBEE');
+</script>
+
+<style>
+    #cookie-banner {
+        position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+        background: white; padding: 15px 25px; border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; align-items: center;
+        gap: 15px; z-index: 9999; width: 90%; max-width: 500px; border: 1px solid #eee;
+    }
+    .cookie-text { font-family: 'Lato', sans-serif; font-size: 0.85rem; color: #555; }
+    .cookie-btn {
+        background: #1E8A96; color: white; border: none; padding: 8px 20px;
+        border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 0.8rem;
+    }
+    .cookie-btn:hover { background: #156d75; }
+</style>
+
+<div id="cookie-banner">
+    <span class="cookie-text">🍪 Usamos cookies para melhorar o jornal. Tudo bem?</span>
+    <button class="cookie-btn" onclick="acceptCookies()">Aceitar e Fechar</button>
+</div>
+
+<script>
+    function checkCookies() {
+        if (!localStorage.getItem('movimenta_cookies_accepted')) {
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }
+    }
+    function acceptCookies() {
+        localStorage.setItem('movimenta_cookies_accepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+    window.onload = function() { checkCookies(); };
+</script>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../assets/img/logo.png" alt="Logo Lâmpada Cérebro" class="logo-icon">
+                
+                <div class="text-group">
+                    <div class="logo-text">
+                        MOVIMENTA<span class="logo-plus">+</span>
+                    </div>
+                    <div class="logo-subtitle">Inovação e Empreendedorismo</div>
+                </div>
+            </div>
+
+            <div class="edition-dropdown" tabindex="0">
+                <button class="edition-btn">
+                    <span>📅</span> Janeiro 2026 ▼
+                </button>
+                <div class="dropdown-content">
+                    <a href="#"><strong> 📅 Janeiro 2026</strong></a>
+                    <a href="../index.html"><strong> 📅 Fevereiro 2026 </strong></a>   
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="headline">
+            <h1>🚀 O que Empreendedores e Inovadores estão criando agora</h1>
+            <p style="margin-top: 1rem; color: #666;">Uma curadoria mensal dos Comitês de Inovação e Empreendedorismo do SENAC Itapira.</p>
+        </section>
+
+        <section class="content-block" id="empreendedorismo">
+    <div class="block-header">
+        <h2 class="block-title">💡 Empreendedorismo em Foco</h2>
+        <p class="block-subtitle">Mais do que negócios: uma nova forma de ver o mundo</p>
+    </div>
+
+    <article>
+        <h3 class="article-title" style="font-size: 1.5rem; line-height: 1.3;">
+            Empreender não é abrir uma empresa: é ter coragem para liderar sua vida e impactar o mundo
+        </h3>
+        
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=80" 
+             alt="Jovem liderando apresentação" 
+             class="article-image"
+             style="height: 250px;">
+
+        <div class="article-summary" style="background-color: #E0F7FA; border-left: 4px solid var(--color-primary);">
+            <p style="margin-bottom: 1rem;">
+                Empreendedorismo está muito além de virar dono de um negócio. É uma <strong>atitude revolucionária</strong>: pensar em oportunidades onde outros veem obstáculos, questionar o status quo, transformar ideias criativas em ações reais.
+            </p>
+            <p style="margin-bottom: 1rem;">
+                No Senac, você aprende que empreender é ter <strong>iniciativa em sala de aula</strong>, propor soluções para problemas que ninguém resolveu, testar ideias mesmo sabendo que pode falhar — e aprender com isso. É aquela mentalidade de quem não espera tudo pronto, mas se move para fazer acontecer.
+            </p>
+            <p>
+                Prova viva: o <strong>Empreenda Senac</strong>, que em 18 edições mobilizou <strong>73 mil participantes</strong> e transformou <strong>22 mil ideias</strong> em soluções reais. Você está pronto para ser o próximo? Porque empreender não é sobre negócios. É sobre <strong>agir, evoluir e deixar sua marca</strong>.
+            </p>
+        </div>
+
+        <div class="cta-wrapper">
+    <a href="../materias/2026-01/artigo-empreendedorismo.html" class="btn-primary">
+        📖 Ler Matéria Completa
+    </a>
+
+    <a href="https://forms.cloud.microsoft/r/gW4ktKDMfQ" target="_blank" class="btn-secondary">
+        💡 Qual seu perfil? Responda
+    </a>
+</div>
+        </div>
+    </article>
+</section>
+
+<section class="content-block" id="inovacao" style="border-left-color: var(--color-secondary);">
+    <div class="block-header">
+        <h2 class="block-title" style="color: var(--color-secondary);">🔬 Inovação em Ação</h2>
+        <p class="block-subtitle">O que é inovação para o SENAC?</p>
+    </div>
+
+    <article>
+        <h3 class="article-title" style="font-size: 1.5rem; line-height: 1.3;">
+            A inovação é o seu superpoder: descubra como transformar ideias em impacto real
+        </h3>
+
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80" 
+             alt="Conexão global e inovação" 
+             class="article-image"
+             style="height: 250px;"> 
+
+        <div class="article-summary" style="background-color: #FFF3E0; border-left: 4px solid var(--color-secondary);">
+            <p style="margin-bottom: 1rem;">
+                O mundo está em transformação constante e acelerada. Novas tecnologias surgem, comportamentos mudam, problemas emergem — e <strong>quem inova não é quem espera pela perfeição</strong>, mas quem tem coragem de tentar, falhar e evoluir.
+            </p>
+            <p style="margin-bottom: 1rem;">
+                Você possui o <strong>DNA da inovação</strong> dentro de você: a capacidade de conectar percepções, questionar o óbvio e criar soluções que resolvem problemas reais. Começando com pequenas ideias que transformam seu dia a dia, passando por melhorias contínuas nos seus processos, e chegando a projetos ousados que impactam multidões — a inovação é um músculo que cresce com treino.
+            </p>
+            <p>
+                Não se trata de ser um gênio tech ou ter recursos infinitos. Trata-se de estar disposto a errar, aprender e criar algo melhor a cada dia. <strong>Hora de canalizar essa energia em inovação que importa.</strong>
+            </p>
+        </div>
+
+        <div class="cta-wrapper">
+    <a href="../materias/2026-01/artigo-inovacao.html" class="btn-primary" style="background: var(--color-secondary);">
+        🎬 Ler Artigo Completo
+    </a>
+
+    <a href="https://forms.cloud.microsoft/r/tgWy5Rs2EG" target="_blank" class="btn-secondary">
+        🧬 Teste seu DNA Inovador
+    </a>
+</div>
+    </article>
+</section>
+
+        <section class="content-block" id="agenda" style="border-left-color: var(--color-accent);">
+    
+    <style>
+        /* Card que agrupa vários dias */
+        .agenda-group-card {
+            background: #F9FAFB;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--color-accent);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .group-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--color-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Lista de dias compacta */
+        .schedule-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem; /* Distância entre os dias (mais juntos) */
+        }
+
+        .schedule-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+        
+        .schedule-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .date-badge {
+            background: var(--color-accent);
+            color: var(--color-dark);
+            font-weight: bold;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            min-width: 50px;
+            text-align: center;
+            flex-shrink: 0; /* Impede que a data encolha */
+        }
+
+        .activity-desc {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Estilo Específico para Carnaval (Aviso) */
+        .carnival-card {
+            border-left-color: var(--color-secondary); /* Laranja */
+            background: #FFF8F5;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        .open { background-color: #27AE60; } /* Verde */
+        .closed { background-color: #C0392B; } /* Vermelho */
+        .partial { background-color: #F39C12; } /* Amarelo */
+
+    </style>
+
+    <div class="block-header">
+        <h2 class="block-title" style="color: var(--color-dark);">📅 Agenda & Avisos </h2>
+        <p class="block-subtitle">Fique por dentro da programação especial do mês de Fevereiro</p>
+    </div>
+
+    <div class="agenda-group-card">
+        <div class="group-title" style="color: var(--color-dark)">
+            🎒 Semana de Volta às Aulas
+        </div>
+        
+        <div class="schedule-list">
+            <div class="schedule-row">
+                <div class="date-badge">SEG<br>09/02</div>
+                <div class="activity-desc">
+                    <strong>Recepção de Boas-vindas</strong><br>
+                    Nos intervalos: DJ, Backdrop para Fotos, Pipoca e Algodão-doce
+                </div>
+            </div>
+
+            <div class="schedule-row">
+                <div class="date-badge">TER<br>10/02</div>
+                <div class="activity-desc">
+                    <strong>Oficina Artística</strong><br>
+                    Ponto de encontro: Sala 10 | Manhã (09h00 às 11h00)
+                </div>
+            </div>
+
+            <div class="schedule-row">
+                <div class="date-badge">QUA<br>11/02</div>
+                <div class="activity-desc">
+                    <strong>Oficina Artística</strong><br>
+                    Ponto de encontro: Sala 10 | Tarde (14h00 às 16h00)
+                </div>
+            </div>
+
+            <div class="schedule-row">
+                <div class="date-badge">QUI<br>12/02</div>
+                <div class="activity-desc">
+                    <strong>Oficina Artística</strong><br>
+                    Ponto de encontro: Biblioteca | Manhã (20h00 às 22h00)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="agenda-group-card carnival-card">
+        <div class="group-title" style="color: var(--color-dark);">
+            🎭 Funcionamento: Carnaval
+        </div>
+
+        <div class="schedule-list">
+            <div class="schedule-row">
+                <div class="date-badge" style="background: var(--color-secondary);">SEG<br>16/02</div> <div class="activity-desc">
+                    <span class="status-dot closed"></span><strong>Fechado</strong><br>
+                    Recesso de Carnaval.
+                </div>
+            </div>
+
+            <div class="schedule-row">
+                <div class="date-badge" style="background: var(--color-secondary);">TER<br>17/02</div>
+                <div class="activity-desc">
+                    <span class="status-dot closed"></span><strong>Fechado</strong><br>
+                    Recesso de Carnaval.
+                </div>
+            </div>
+
+            <div class="schedule-row">
+                <div class="date-badge" style="background: var(--color-secondary);">QUA<br>18/02</div>
+                <div class="activity-desc">
+                    <span class="status-dot partial"></span><strong>Retorno Parcial</strong><br>
+                    Abertura da unidade às 14h00. Não haverá atividades letivas
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section class="content-block" id="aconteceu" style="border-left-color: var(--color-third);">
+    <div class="block-header">
+        <h2 class="block-title" style="color: var(--color-third);">✨ O Que Rolou</h2>
+        <p class="block-subtitle">Confira os destaques de 2025!</p>
+    </div>
+
+    <div class="highlight-card" style="border-left: 4px solid var(--color-primary); background: #f9fbfc; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+        <h4 style="margin-bottom: 0.5rem; font-family: 'Montserrat'; font-size: 1.2rem;">
+            🏆 Vencedores Estaduais
+        </h4>
+        <p style="color: #555; margin-bottom: 1rem;">
+            Conheça os projetos do Empreenda que venceram a edição de 2025.
+        </p>
+        <a href="https://empreenda.digito1.com.br/Home/Vencedores" target="_blank" style="color: var(--color-primary); font-weight: bold; text-decoration: none;">
+            Ver Lista Oficial SP →
+        </a>
+    </div>
+
+    <div class="highlight-card" style="border-left: 4px solid var(--color-secondary); background: #fff5f0; padding: 1.5rem; border-radius: 12px;">
+        <h4 style="margin-bottom: 0.5rem; font-family: 'Montserrat'; font-size: 1.2rem;">
+            📍 Top 5 Senac Itapira
+        </h4>
+        <p style="color: #555; margin-bottom: 1rem;">
+            Veja quem foram os alunos e projetos da nossa unidade que se destacaram no ranking local.
+        </p>
+        <a href="../materias/2026-01/ranking-itapira.html" class="btn-primary" style="background: var(--color-secondary); font-size: 0.9rem; padding: 8px 20px;">
+            Ver Ranking Local
+        </a>
+    </div>
+
+             <div class="highlight-card" style="border-left: 4px solid var(--color-primary); background: #f9fbfc; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+        <h4 style="margin-bottom: 0.5rem; font-family: 'Montserrat'; font-size: 1.2rem;">
+            🎉 Eventos
+        </h4>
+        <p style="color: #555; margin-bottom: 1rem;">
+            Confira os eventos que agitaram nossa unidade em 2025
+        </p>
+        <a href="https://eventos.sp.senac.br/unidades/senac-itapira/" target="_blank" class="btn-primary" style="background: var(--color-primary); font-weight: bold; text-decoration: none;">
+            Acessar eventos
+        </a>
+    </div>
+</section>
+
+        <section class="content-block" id="biblioteca" style="border-left-color: var(--color-quarter);">
+    <div class="block-header">
+        <h2 class="block-title" style="color: var(--color-quarter);">📚 Dica da Biblioteca</h2>
+        <p class="block-subtitle">Leitura obrigatória para entender a Era das Máquinas</p>
+    </div>
+
+    <div class="book-card">
+        <img src="../assets/2026-01/livro-jan.jpg" 
+             alt="Capa do Livro Habilidades do Futuro" 
+             class="book-cover"
+             style="object-fit: cover;"> 
+        
+        <div class="book-info">
+            <h3 style="margin-bottom: 0.5rem; font-family: 'Montserrat'; line-height: 1.3;">
+                A (r)evolução das habilidades para o futuro do trabalho
+            </h3>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
+                <strong>Autora:</strong> Martha Gabriel | Editora Senac
+            </p>
+            
+            <p style="margin-bottom: 1rem; line-height: 1.6;">
+                O futuro do trabalho não é apenas digital, é <strong>híbrido</strong>. Neste livro essencial, Martha Gabriel desmistifica a ideia de que seremos substituídos e mostra como criar uma parceria poderosa com a Inteligência Artificial.
+            </p>
+            <p style="margin-bottom: 1.5rem; line-height: 1.6;">
+                <strong>Por que ler?</strong> Para descobrir como desenvolver as competências que máquina nenhuma consegue copiar: pensamento crítico, ética, empatia e sustentabilidade. É o manual definitivo para se tornar um humano indispensável na Era da IA.
+            </p>
+            
+            <div class="cta-wrapper" style="justify-content: flex-start; gap: 15px;">
+                <a href="https://www.editorasenacsp.com.br/livro/habilidades-futuro-trabalho-era-inteligencia-artificial" target="_blank" class="btn-primary" style="background: var(--color-quarter); padding: 10px 24px; font-size: 0.9rem;">
+                    📖 Ver na Livraria Senac
+                </a>
+                <span style="font-size: 0.8rem; color: #666; align-self: center;">Disponível também na biblioteca da unidade</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h3 style="color: white; font-family: 'Montserrat'; margin-bottom: 1rem;">MOVIMENTA<span style="color: var(--color-accent);">+</span></h3>
+            
+            <div class="footer-cta-box">
+    <h4 style="color: white; margin-bottom: 1rem;">🗳️ Sua opinião molda a próxima edição</h4>
+    <p style="margin-bottom: 1.5rem; font-size: 0.9rem;">Conta pra gente o que achou desse MOVIMENTO</p>
+
+    <a href="https://forms.cloud.microsoft/r/wC2dx4SeGS" target="_blank" class="btn-primary" style="background: var(--color-accent); color: var(--color-dark); text-decoration: none; display: inline-block;">
+        Responder a Enquete Rápida
+    </a>
+</div>
+
+            <p style="font-size: 0.8rem; color: #6B7280; margin-top: 3rem;">
+                &copy; 2026 MOVIMENTA+ | Desenvolvido pelos Comitês de Inovação e Empreendedorismo<br>
+            </p>
+<p style="font-size: 0.7rem; color: #555; margin-top: 0.5rem;">
+    * Este é um projeto educacional interno. Dados coletados via formulários seguem a LGPD e são utilizados exclusivamente para fins de melhoria editorial.
+</p>
+        </div>
+    </footer>
+
+</body>
+</html>
